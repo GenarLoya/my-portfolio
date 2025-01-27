@@ -11,7 +11,7 @@ const Badge: FunctionComponent<Props> = (
     return (
         <div
             className={cn(
-                "rounded-full px-3 py-2 font-semibold text-light-accent bg-light-secondary",
+                "rounded-full px-4 py-2 font-semibold text-light-accent bg-light-secondary",
                 className,
             )}
         >
@@ -28,7 +28,7 @@ export const BadgeOutline: FunctionComponent<Props> = (
     return (
         <div
             className={cn(
-                "rounded-full px-3 py-2 font-semibold text-light-secondary bg-transparent border border-light-secondary",
+                "rounded-full px-4 py-2 font-semibold text-light-secondary bg-transparent border border-light-secondary",
                 className,
             )}
         >

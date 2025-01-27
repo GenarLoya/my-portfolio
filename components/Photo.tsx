@@ -3,7 +3,7 @@ export default function Photo() {
         <img
             class="my-6 rounded-full h-[226px] w-auto"
             src="/photo.png"
-            alt="the Fresh logo: a sliced lemon dripping with juice"
+            alt="genaro-loya-photo"
         />
     );
 }
