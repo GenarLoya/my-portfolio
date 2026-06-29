@@ -36,11 +36,11 @@
     },
     "build": {
       "description": "Build the site for production",
-      "command": "deno task lume"
+      "command": "deno task --env-file lume"
     },
     "serve": {
       "description": "Run and serve the site for development",
-      "command": "deno task lume -s"
+      "command": "deno task --unstable-temporal --env-file lume -s"
     },
     "new": {
       "description": "Create new content or code using artifacts",
@@ -52,7 +52,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "lume"
   },
-  "unstable": ["fmt-component"],
+  "unstable": ["fmt-component", "temporal"],
   "allowScripts": {
     "deny": ["npm:sharp", "npm:@parcel/watcher"]
   },

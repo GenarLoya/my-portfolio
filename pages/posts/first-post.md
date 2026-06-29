@@ -1,14 +1,10 @@
 ---
 title: First Post
-date: 2026-06-28
+date: 2026-06-28 00:00:00
 type: post
 layout: layouts/post.tsx
 ---
-
-Welcome to my portfolio. I'm starting this site to document the projects
-I'm working on and the things I'm learning along the way. Expect short
-posts about tools, workflows, and the occasional deep dive into a
-problem worth solving.
+Welcome to my portfolio. 
 
 # Why a portfolio
 
