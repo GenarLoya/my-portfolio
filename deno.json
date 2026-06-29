@@ -1,7 +1,6 @@
 {
   "imports": {
     "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.2.6/",
-    "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@v0.15.5/",
     "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.15/jsx-runtime.ts"
   },
   "permissions": {
@@ -40,7 +39,7 @@
     },
     "serve": {
       "description": "Run and serve the site for development",
-      "command": "deno task --unstable-temporal --env-file lume -s"
+      "command": "deno task lume -s"
     },
     "new": {
       "description": "Create new content or code using artifacts",
