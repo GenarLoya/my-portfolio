@@ -10,5 +10,6 @@ site.use(jsx());
 site.use(tailwindcss());
 site.add("styles.css");
 site.add("assets");
+site.add([".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"]);
 
 export default site;

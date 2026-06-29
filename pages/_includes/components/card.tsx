@@ -7,7 +7,7 @@ export default function Card({
   class?: string;
   children?: unknown;
 }) {
-  const base = `rounded-lg border border-zinc-800 bg-zinc-900 p-6 ${className}`;
+  const base = `rounded-lg border border-zinc-800 bg-zinc-900/60 backdrop-blur-md p-6 ${className}`;
 
   if (href) {
     return (

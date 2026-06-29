@@ -4,3 +4,12 @@
 * {
   font-family: "JetBrains Mono", monospace;
 }
+
+.carousel {
+  scroll-padding: 0;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
