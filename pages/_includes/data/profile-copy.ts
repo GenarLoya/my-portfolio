@@ -1,0 +1,2 @@
+export const profileCopy =
+  "Ingeniero en Sistemas Computacionales con más de 3 años de experiencia en desarrollo Full Stack, gestión de entornos de software y configuración de servicios en la nube. Especializado en el diseño y construcción de aplicaciones mantenibles utilizando el ecosistema JavaScript/TypeScript, con fuerte dominio en Next.js y NestJS. Enfocado en el desarrollo de software bajo sólidos principios de arquitectura limpia, asegurando sistemas empresariales eficientes, estables y correctamente integrados.";
