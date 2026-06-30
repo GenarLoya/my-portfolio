@@ -2,6 +2,7 @@ import BaseLayout from "./base.tsx";
 import Card from "../components/card.tsx";
 import GridBackground from "../components/grid-background.tsx";
 import MarkdownContent from "../components/markdown-content.tsx";
+import { formatDateLong } from "../utils/format-date.ts";
 import {
   Camera,
   Empty,
@@ -83,12 +84,7 @@ export default function ProjectLayout({
           <div>
             <header class="mb-8">
               {date && (
-                <p class="text-sm text-zinc-500">
-                  {new Date(date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                  })}
-                </p>
+                <p class="text-sm text-zinc-500">{formatDateLong(date)}</p>
               )}
               {title && (
                 <h1 class="mt-2 text-4xl md:text-5xl font-bold tracking-tight text-white">
@@ -122,7 +118,6 @@ export default function ProjectLayout({
             <Card class="w-full">
               <MarkdownContent>{children}</MarkdownContent>
             </Card>
-
 
             <section class="mt-8">
               <h2 class="text-xs uppercase tracking-widest text-zinc-500 mb-4 px-6">

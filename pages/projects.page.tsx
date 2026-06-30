@@ -16,7 +16,7 @@ function resolveCover(
 }
 
 export default function ProjectsPage(props: Lume.Data) {
-  const projects = props.search.pages("type=project", "date=desc");
+  const projects = props.search.pages("type=project", "order=-date");
 
   return (
     <section class="py-12">
