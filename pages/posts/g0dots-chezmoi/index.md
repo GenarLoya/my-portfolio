@@ -107,7 +107,7 @@ The current setup only ships the clock module. Adding more (network,
 battery, audio) is a matter of enabling modules in `config.jsonc` —
 their styling is already routed through `color.css`.
 
-![Waybar status bar at the top of the screen](./images/wayabay-0.png)
+![Waybar status bar at the top of the screen](./images/waybar-0.png)
 
 ## Launcher — rofi
 

@@ -26,27 +26,25 @@ gallery:
   - ./images/screenshot-0.png
 ---
 
-Monitor de sistema en tiempo real usando **Server-Sent Events (SSE)**.
-Un servidor hecho en Deno + Hono toma datos del CPU, la memoria y los
-procesos de tu computadora y los envía al navegador automáticamente. La
-página web en React muestra gráficas con el historial de datos y una
-tabla con los procesos activos.
+Real-time system monitor using **Server-Sent Events (SSE)**. A Deno +
+Hono server reads CPU, memory, and process data from your computer and
+streams it to the browser automatically. The React frontend renders
+charts with the historical data and a table of active processes.
 
-**Servidor**: Deno + Hono, envía datos en vivo por SSE. **Página web**:
-Vite + React 18 + TypeScript, TanStack Query, Recharts, Tailwind. **Tipos
-compartidos**: paquete del workspace de Deno. **Ejecución en dev**:
-Spino corre el servidor y la página al mismo tiempo.
+**Backend**: Deno + Hono, streams live data over SSE. **Frontend**: Vite
++ React 18 + TypeScript, TanStack Query, Recharts, Tailwind. **Shared
+types**: Deno workspace package. **Dev orchestration**: Spino runs the
+server and the frontend in parallel.
 
 ## Endpoints
 
-- `GET /online/cpu` — SSE — datos de CPU cada 3s
-- `GET /online/memory` — SSE — datos de memoria cada 3s
-- `GET /processes` — SSE — top 10 procesos cada 3s
+- `GET /online/cpu` — SSE — CPU metrics every 3s
+- `GET /online/memory` — SSE — memory metrics every 3s
+- `GET /processes` — SSE — top 10 processes every 3s
 
-## Cómo funciona
+## How it works
 
-El servidor ejecuta comandos del sistema (`top`, `free`, `ps`) para
-obtener las métricas. Los datos se envían en formato JSON por el stream
-SSE. La página recibe los datos y los guarda en el historial (máximo 60
-registros). Los componentes de React leen estos datos y muestran las
-gráficas y la tabla.
+The server runs system commands (`top`, `free`, `ps`) to collect
+metrics. The data is sent as JSON over the SSE stream. The frontend
+receives the data and stores it in history (max 60 records). React
+components read this data and render the charts and the table.
