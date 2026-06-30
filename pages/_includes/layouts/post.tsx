@@ -1,5 +1,6 @@
 import BaseLayout from "./base.tsx";
 import Card from "../components/card.tsx";
+import MarkdownContent from "../components/markdown-content.tsx";
 
 export default function PostLayout({ title, date, children }: Lume.Data) {
   return (
@@ -15,7 +16,7 @@ export default function PostLayout({ title, date, children }: Lume.Data) {
         </header>
 
         <Card class="w-full">
-          <div class="text-zinc-300 leading-relaxed">{children}</div>
+          <MarkdownContent>{children}</MarkdownContent>
         </Card>
       </article>
     </BaseLayout>

@@ -1,11 +1,19 @@
 import BaseLayout from "./base.tsx";
 import Card from "../components/card.tsx";
 import GridBackground from "../components/grid-background.tsx";
-import { Camera, Empty, Github, ImagePlaceholder } from "../icons.tsx";
+import MarkdownContent from "../components/markdown-content.tsx";
+import {
+  Camera,
+  Empty,
+  ExternalLink,
+  Github,
+  ImagePlaceholder,
+} from "../icons.tsx";
 
 export default function ProjectLayout({
   title,
   repo_url,
+  site_url,
   date,
   tags,
   technologies,
@@ -23,7 +31,7 @@ export default function ProjectLayout({
         <GridBackground />
 
         <div class="grid grid-cols-1 md:grid-cols-[18rem_1fr] gap-8 items-start">
-          <aside class="md:sticky md:top-12 self-start relative">
+          <aside class="md:sticky md:top-12 self-start relative gap-2">
             {cover ? (
               <Card class="justify-self-center">
                 <img
@@ -38,38 +46,6 @@ export default function ProjectLayout({
                 <ImagePlaceholder size={56} class="text-zinc-600" />
               </div>
             )}
-          </aside>
-
-          <div>
-            <header class="mb-8">
-              {date && (
-                <p class="text-sm text-zinc-500">
-                  {new Date(date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                  })}
-                </p>
-              )}
-              {title && (
-                <h1 class="mt-2 text-4xl md:text-5xl font-bold tracking-tight text-white">
-                  {title}
-                </h1>
-              )}
-              {repo_url && (
-                <a
-                  href={repo_url as string}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="mt-3 inline-flex items-center gap-1.5 text-sm text-zinc-300 hover:text-white transition-colors"
-                >
-                  <Github size={16} class="size-4" />
-                  View repo
-                </a>
-              )}
-            </header>
-
-            <Card class="w-full">{children}</Card>
-
             {(tagList.length > 0 || techList.length > 0) && (
               <Card class="w-full mt-6">
                 {tagList.length > 0 && (
@@ -102,6 +78,51 @@ export default function ProjectLayout({
                 )}
               </Card>
             )}
+          </aside>
+
+          <div>
+            <header class="mb-8">
+              {date && (
+                <p class="text-sm text-zinc-500">
+                  {new Date(date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                  })}
+                </p>
+              )}
+              {title && (
+                <h1 class="mt-2 text-4xl md:text-5xl font-bold tracking-tight text-white">
+                  {title}
+                </h1>
+              )}
+              {repo_url && (
+                <a
+                  href={repo_url as string}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-3 inline-flex px-2 items-center gap-1.5 text-sm text-zinc-300 hover:text-white transition-colors"
+                >
+                  <Github size={16} class="size-4" />
+                  View repo
+                </a>
+              )}
+              {site_url && (
+                <a
+                  href={site_url as string}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-3 inline-flex items-center px-2 gap-1.5 text-sm text-zinc-300 hover:text-white transition-colors"
+                >
+                  <ExternalLink size={16} class="size-4" />
+                  Visit site
+                </a>
+              )}
+            </header>
+
+            <Card class="w-full">
+              <MarkdownContent>{children}</MarkdownContent>
+            </Card>
+
 
             <section class="mt-8">
               <h2 class="text-xs uppercase tracking-widest text-zinc-500 mb-4 px-6">

@@ -39,7 +39,7 @@
     },
     "serve": {
       "description": "Run and serve the site for development",
-      "command": "deno task lume -s"
+      "command": "deno task --env-file --unstable-temporal lume -s"
     },
     "new": {
       "description": "Create new content or code using artifacts",
